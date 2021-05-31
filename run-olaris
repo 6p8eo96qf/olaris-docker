@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Updating olaris-server from nightlies"
+cd /opt
+curl -vL 'https://gitlab.com/api/v4/projects/olaris%2Folaris-server/jobs/artifacts/develop/download?job=dist-linux-amd64' > /opt/build.zip && unzip -o /opt/build.zip && unzip "olaris-linux-amd64-*.zip"
+echo "running olaris-server"
+/opt/bin/olaris
