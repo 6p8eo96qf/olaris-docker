@@ -1,4 +1,4 @@
-FROM ubuntu:xenial as base
+FROM node:lts-buster
 COPY setup.sh .
 RUN bash setup.sh
 
