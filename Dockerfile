@@ -1,4 +1,7 @@
 FROM ubuntu:xenial as base
+COPY setup.sh .
+RUN bash setup.sh
+
 
 RUN     apt-get -y update && \
         apt-get -y --no-install-recommends install curl ca-certificates unzip && \
@@ -8,5 +11,7 @@ ADD run-olaris /opt/run-olaris
 EXPOSE 8080
 
 ENV LOGTOSTDERR=1
+ENV PORT=8080
 ENV V=4
-ENTRYPOINT /opt/run-olaris
+COPY . .
+CMD ["bash", "start.sh"]
