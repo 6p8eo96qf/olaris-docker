@@ -1,7 +1,4 @@
-FROM ubuntu
-COPY setup.sh .
-RUN bash setup.sh
-
+FROM ubuntu:18.04
 
 RUN     apt-get -y update && \
         apt-get -y --no-install-recommends install curl ca-certificates unzip && \
@@ -12,5 +9,4 @@ EXPOSE 8080
 
 ENV LOGTOSTDERR=1
 ENV V=4
-COPY . .
-CMD ["bash", "start.sh"]
+ENTRYPOINT /opt/run-olaris
