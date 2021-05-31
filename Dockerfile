@@ -9,4 +9,5 @@ EXPOSE 8080
 
 ENV LOGTOSTDERR=1
 ENV V=4
+RUN chmod +x /opt/run-olaris
 ENTRYPOINT /opt/run-olaris
