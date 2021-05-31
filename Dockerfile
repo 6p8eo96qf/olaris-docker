@@ -10,6 +10,6 @@ EXPOSE 8080
 
 ENV LOGTOSTDERR=1
 ENV V=4
-COPY run.sh
+COPY run.sh .
 RUN chmod +x run.sh
 CMD ["bash","run.sh"]
