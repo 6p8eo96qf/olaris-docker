@@ -1,4 +1,4 @@
-FROM node:lts-buster
+FROM ubuntu
 COPY setup.sh .
 RUN bash setup.sh
 
@@ -11,7 +11,6 @@ ADD run-olaris /opt/run-olaris
 EXPOSE 8080
 
 ENV LOGTOSTDERR=1
-ENV PORT=8080
 ENV V=4
 COPY . .
 CMD ["bash", "start.sh"]
